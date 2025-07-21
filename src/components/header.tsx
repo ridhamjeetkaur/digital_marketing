@@ -1,10 +1,11 @@
-
+import logo from "../assets/images/Green White Professional Minimal Brand Logo (1).png"
 // Header Component
 const Header: React.FC = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light navbar-custom py-3 sticky-top">
+    <nav className="navbar navbar-expand-lg navbar-light navbar-custom py-3 sticky-top" >
       <div className="container">
-        <a className="navbar-brand navbar-brand-custom" href="#">DigitalMarketer</a>
+        <img src={logo} alt="logo" height="80"  width="70"/>
+        <a className="navbar-brand navbar-brand-custom" href="#">Zarexa</a>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>

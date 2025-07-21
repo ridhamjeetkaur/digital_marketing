@@ -1,5 +1,5 @@
 import { colors } from "./Color";
-
+import front_image from "../assets/images/front-page.png"
 // Hero Component (Main Page Section)
 const Hero: React.FC = () => {
   return (
@@ -14,7 +14,7 @@ const Hero: React.FC = () => {
           </div>
           <div className="col-lg-6 col-md-12 hero-image-container mt-5 mt-lg-0">
             <img
-              src="https://placehold.co/700x500/${colors.lightGray.substring(1)}/${colors.primary.substring(1)}?text=Digital+Marketing+Dashboard"
+              src={front_image}
               onError={(e: React.SyntheticEvent<HTMLImageElement, Event>) => {
                 const target = e.target as HTMLImageElement;
                 target.onerror = null;

@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
       <div className="container">
         <div className="row">
           <div className="col-lg-4 col-md-6 mb-4 mb-lg-0 text-center text-md-start">
-            <h5 className="navbar-brand-custom mb-3">DigitalMarketer</h5>
+            <h5 className="navbar-brand-custom mb-3">Zarexa</h5>
             <p className="text-secondary">Your partner in achieving digital marketing excellence.</p>
             <div className="d-flex social-icons mt-4 justify-content-center justify-content-md-start">
               <a href="#" className="social-icon"><BsFacebook /></a>
@@ -39,14 +39,14 @@ const Footer: React.FC = () => {
           </div>
           <div className="col-lg-4 col-md-6">
             <h5>Contact Us</h5>
-            <p className="text-secondary mb-1">123 Marketing Ave, Suite 456</p>
-            <p className="text-secondary mb-1">Digital City, DM 78901</p>
-            <p className="text-secondary">info@digitalmarketer.com</p>
+            <p className="text-secondary mb-1">Address</p>
+            <p className="text-secondary mb-1">Address</p>
+            <p className="text-secondary">info@zarexa.com</p>
           </div>
         </div>
         <hr className="my-4 border-secondary-subtle" />
         <div className="text-center text-secondary">
-          &copy; {new Date().getFullYear()} DigitalMarketer. All rights reserved.
+          &copy; {new Date().getFullYear()} Zarexa. All rights reserved.
         </div>
       </div>
     </footer>

@@ -13,6 +13,7 @@ import React from "react"
   mutedGray: '#6c757d',
   softGray: '#adb5bd',
   brown: '#CD5C5C',
+  skin:'#fffef0',
 };
 
 // Custom CSS for the new color theme and specific styles
@@ -75,7 +76,7 @@ export const customStyles = `
   /* Hero Section Customization */
   .hero-section {
     background-color: ${colors.lightGray};
-    padding: 100px 0;
+    padding: 10px 0;
   }
   .hero-content .small-text {
     font-size: 1.3rem;
@@ -115,9 +116,8 @@ export const customStyles = `
     background-color: ${colors.primaryDark};
   }
   .hero-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 12px;
+    max-width: 800px;
+    height: 600px;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
   }
 
@@ -126,6 +126,8 @@ export const customStyles = `
     background-color: ${colors.white};
     padding: 80px 0;
   }
+
+  
   .service-card {
     border: none;
     border-radius: 12px;
@@ -138,14 +140,14 @@ export const customStyles = `
     box-shadow: 0 8px 20px rgba(0,0,0,.12);
   }
   .service-icon-wrapper {
-    background-color: ${colors.primaryLight};
+    background-color: ${colors.lightGray};
     padding: 15px;
     border-radius: 50%;
     display: inline-flex;
     margin-bottom: 20px;
   }
   .service-icon {
-    color: ${colors.primaryDark};
+    color: ${colors.brown};
     font-size: 28px;
   }
   .service-card h3 {
@@ -256,22 +258,23 @@ export const customStyles = `
 
   /* About Section Customization */
   .about-section {
-    background-color: ${colors.white};
+    background-color: grey;
     padding: 80px 0;
   }
   .about-section h2 {
-    color: ${colors.darkGray};
+    color: ${colors.white};
     font-weight: 800;
     margin-bottom: 25px;
   }
   .about-section p {
-    color: ${colors.mediumGray};
+    color: ${colors.white};
     line-height: 1.7;
     margin-bottom: 20px;
+    font-size: 1.5rem;
+    text-align:justify;
   }
   .about-image {
     border-radius: 12px;
-    box-shadow: 0 10px 20px rgba(0,0,0,.1);
   }
 
   /* Feedback Section Customization */
