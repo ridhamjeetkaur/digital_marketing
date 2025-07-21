@@ -4,7 +4,7 @@ import { colors } from './Color';
 // About Component
 const About: React.FC = () => {
   return (
-    <section id="about" className="about-section">
+    <section id="about" className="about-section bg-warning">
       <div className="container">
         <div className="row align-items-center">
           <div className="col-lg-6 mb-4 mb-lg-0">

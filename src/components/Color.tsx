@@ -12,6 +12,7 @@ import React from "react"
   mediumGray: '#495057',
   mutedGray: '#6c757d',
   softGray: '#adb5bd',
+  brown: '#CD5C5C',
 };
 
 // Custom CSS for the new color theme and specific styles
@@ -37,18 +38,20 @@ export const customStyles = `
     color: ${colors.mediumGray} !important;
     font-weight: 700; /* Made bolder */
     margin-right: 15px;
-    font-size: 1.09 rem; /* Made slightly bigger */
+    font-size: 1.5rem; /* Made slightly bigger */
   }
+  
   .nav-link-custom:hover {
     color: ${colors.primary} !important;
   }
   .btn-outline-custom {
     border-color: ${colors.primary};
     color: ${colors.primary};
-    font-weight: 600;
+    font-weight: 700;
     border-radius: 8px;
     padding: 8px 20px;
     transition: all 0.3s ease;
+    font-size: 1.5rem;
   }
   .btn-outline-custom:hover {
     background-color: ${colors.primary};
@@ -61,6 +64,7 @@ export const customStyles = `
     font-weight: 600;
     border-radius: 8px;
     padding: 8px 20px;
+    font-size: 1.5rem;
     transition: all 0.3s ease;
   }
   .btn-primary-custom:hover {
@@ -74,7 +78,7 @@ export const customStyles = `
     padding: 100px 0;
   }
   .hero-content .small-text {
-    font-size: 0.9rem;
+    font-size: 1.3rem;
     font-weight: 600;
     color: ${colors.primary};
     text-transform: uppercase;
@@ -89,7 +93,7 @@ export const customStyles = `
     margin-bottom: 25px;
   }
   .hero-content p {
-    font-size: 1.15rem;
+    font-size: 1.35rem;
     color: ${colors.mediumGray};
     line-height: 1.6;
     margin-bottom: 40px;
@@ -101,9 +105,12 @@ export const customStyles = `
     padding: 15px 35px;
     border-radius: 8px;
     border: none;
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     transition: background-color 0.3s ease;
   }
+   .bg-warning {
+    background-color:${colors.brown};
+    }
   .btn-hero-cta:hover {
     background-color: ${colors.primaryDark};
   }

@@ -28,15 +28,10 @@ const Services: React.FC = () => {
   const servicesData = [
     { icon: BsEnvelope, title: 'Email Marketing', description: 'Craft compelling emails that convert leads into loyal customers.' },
     { icon: BsGear, title: 'Marketing Automation', description: 'Automate your campaigns for efficiency and consistent customer engagement.' },
-    { icon: BsLightning, title: 'AI Marketing Tools', description: 'Leverage AI to optimize campaigns, predict trends, and personalize experiences.' },
     { icon: BsGlobe, title: 'Website Design', description: 'Build stunning, responsive websites that drive traffic and conversions.' },
-    { icon: BsBarChart, title: 'Reporting & Analytics', description: 'Gain deep insights into your performance with comprehensive data reports.' },
     { icon: BsPencilSquare, title: 'Content Creation', description: 'Develop engaging content that resonates with your audience and builds brand authority.' },
     { icon: BsHandThumbsUp, title: 'Social Media Marketing', description: 'Boost your brand presence and engage with your audience across all platforms.' },
     { icon: BsPeople, title: 'Audience Management', description: 'Segment and manage your audience for highly targeted and effective campaigns.' },
-    { icon: BsGraphUp, title: 'Lead Generation', description: 'Implement strategies to attract and capture high-quality leads for your business.' },
-    { icon: BsLayoutTextWindow, title: 'Custom Templates', description: 'Access a library of customizable templates for all your marketing needs.' },
-    { icon: BsGridFill, title: 'Full Feature Set', description: 'Explore all the powerful tools and features our platform has to offer.' },
   ];
 
   return (
