@@ -7,8 +7,8 @@ const Hero: React.FC = () => {
       <div className="container">
         <div className="row align-items-center">
           <div className="col-lg-6 col-md-12 hero-content text-center text-lg-start">
-            <p className="small-text">Email Marketing Platform</p>
-            <h1>Convert more customers with a powerful and intuitive platform</h1>
+            <p className="small-text">Digital Marketing Platform</p>
+            <h1>Simplify Your Marketing, Multiply Your Results</h1>
             <p>Create personalized emails, target precisely with behavior-based automations and segments, and optimize with real-time reporting.</p>
             <button className="btn btn-hero-cta">Get started</button>
           </div>

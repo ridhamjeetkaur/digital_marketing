@@ -233,6 +233,7 @@ export const customStyles = `
     border-radius: 12px;
     box-shadow: 0 5px 15px rgba(0,0,0,.08);
     padding: 40px;
+    font-size: 1.5rem;
   }
   .contact-form-card .form-control {
     border-radius: 8px;

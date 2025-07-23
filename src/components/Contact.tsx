@@ -1,5 +1,6 @@
-import { useState } from "react";
 import { BsEnvelopeFill, BsGeoAltFill, BsPhoneFill } from "react-icons/bs";
+import { colors } from "./Color";
+import { useState } from "react";
 
 // Contact Component
 const Contact: React.FC = () => {
@@ -13,10 +14,10 @@ const Contact: React.FC = () => {
   const [isError, setIsError] = useState<boolean>(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { id, value } = e.target;
+    const { id, value, type, checked } = e.target as HTMLInputElement;
     setFormData((prevData) => ({
       ...prevData,
-      [id]: value,
+      [id]: type === 'checkbox' ? checked : value,
     }));
   };
 
@@ -25,9 +26,13 @@ const Contact: React.FC = () => {
     setStatusMessage(null); // Clear previous messages
     setIsError(false);
 
+   
+
     try {
-      // Replace with your actual Express API endpoint
-      const response = await fetch('http://localhost:5000/api/contact', {
+      // IMPORTANT: Ensure this URL matches your Express.js backend API endpoint.
+      // If your React app is on port 3000 and Express on 3001, use the full URL.
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/contact`
+, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -38,7 +43,7 @@ const Contact: React.FC = () => {
       if (response.ok) {
         setStatusMessage('Message sent successfully! We will get back to you soon.');
         setIsError(false);
-        setFormData({ name: '', email: '', subject: '', message: '' }); // Clear form
+        setFormData({ name: '', email: '', subject: '', message: ''}); // Clear form
       } else {
         const errorData = await response.json();
         setStatusMessage(`Failed to send message: ${errorData.message || 'Unknown error'}`);
@@ -54,93 +59,67 @@ const Contact: React.FC = () => {
   return (
     <section id="contact" className="contact-section">
       <div className="container">
-        <h2 className="text-center display-4 fw-bold text-dark mb-5">Get in Touch</h2>
-        <div className="row g-4 mb-5">
-          <div className="col-lg-4 col-md-6">
-            <div className="contact-info-card">
-              <div className="icon-wrapper">
-                <BsGeoAltFill />
-              </div>
-              <h4>Our Location</h4>
-              <p>123 Marketing Ave, Suite 456</p>
-              <p>Digital City, DM 78901</p>
-            </div>
-          </div>
-          <div className="col-lg-4 col-md-6">
-            <div className="contact-info-card">
-              <div className="icon-wrapper">
-                <BsPhoneFill />
-              </div>
-              <h4>Call Us</h4>
-              <p>+91 9876543221</p> {/* Updated phone number */}
-              <p>Mon - Fri, 9 AM - 5 PM EST</p>
-            </div>
-          </div>
-          <div className="col-lg-4 col-md-12">
-            <div className="contact-info-card">
-              <div className="icon-wrapper">
-                <BsEnvelopeFill />
-              </div>
-              <h4>Email Us</h4>
-              <p>info@zarexa.com</p> {/* Updated email */}
-              <p>support@zarexa.com</p> {/* Updated email */}
-            </div>
-          </div>
+        <div className="text-center contact-header-text">
+          <h2 className="display-4 fw-bold text-dark mb-3">Let's Contact With Us</h2>
+          <p>
+            
+          </p>
         </div>
 
-        <div className="row justify-content-center">
-          <div className="col-lg-8">
+        <div className="row justify-content-center mb-5">
+          <div className="col-lg-10">
             <div className="contact-form-card">
-              <h3 className="text-center text-dark mb-4">Send Us a Message</h3>
-              <form onSubmit={handleSubmit}> {/* Added onSubmit handler */}
-                <div className="mb-3">
-                  <label htmlFor="name" className="form-label">Name</label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="name"
-                    placeholder="Your Name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                  />
+              <form onSubmit={handleSubmit}>
+                <div className="row g-3 mb-3">
+                  <div className="col-md-6">
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="name"
+                      placeholder="Your name*"
+                      value={formData.name}
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+                  <div className="col-md-6">
+                    <input
+                      type="email"
+                      className="form-control"
+                      id="email"
+                      placeholder="Email address*"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+                </div>
+                <div className="row g-3 mb-3">
+                  <div className="col-md-6">
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="subject"
+                      placeholder="Subject"
+                      value={formData.subject}
+                      onChange={handleChange}
+                    />
+                  </div>
+                  
                 </div>
                 <div className="mb-3">
-                  <label htmlFor="email" className="form-label">Email address</label>
-                  <input
-                    type="email"
-                    className="form-control"
-                    id="email"
-                    placeholder="name@example.com"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-                <div className="mb-3">
-                  <label htmlFor="subject" className="form-label">Subject</label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="subject"
-                    placeholder="Subject of your inquiry"
-                    value={formData.subject}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-                <div className="mb-3">
-                  <label htmlFor="message" className="form-label">Message</label>
                   <textarea
                     className="form-control"
                     id="message"
                     rows={5}
-                    placeholder="Your message"
+                    placeholder="Your message..."
                     value={formData.message}
                     onChange={handleChange}
                     required
                   ></textarea>
                 </div>
+               
+
                 {statusMessage && (
                   <div className={`alert ${isError ? 'alert-danger' : 'alert-success'} mt-3`} role="alert">
                     {statusMessage}
@@ -153,9 +132,41 @@ const Contact: React.FC = () => {
             </div>
           </div>
         </div>
+
+        <div className="row g-4">
+          <div className="col-lg-4 col-md-6">
+            <div className="contact-info-card">
+              <div className="icon-wrapper">
+                <BsEnvelopeFill />
+              </div>
+              <h4>Mail Here</h4>
+              <p>hello@luez.com</p>
+              <p>info@luez.com</p>
+            </div>
+          </div>
+          <div className="col-lg-4 col-md-6">
+            <div className="contact-info-card">
+              <div className="icon-wrapper">
+                <BsGeoAltFill />
+              </div>
+              <h4>Visit Here</h4>
+              <p>27 Division St, New York,</p>
+              <p>NY 10002, USA</p>
+            </div>
+          </div>
+          <div className="col-lg-4 col-md-12">
+            <div className="contact-info-card">
+              <div className="icon-wrapper">
+                <BsPhoneFill />
+              </div>
+              <h4>Call Here</h4>
+              <p>+123 456 7890</p>
+              <p>+241 452 4526</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
 };
-
 export default Contact;
