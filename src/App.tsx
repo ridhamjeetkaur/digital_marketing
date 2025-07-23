@@ -5,11 +5,10 @@ import Services from './components/Services';
 import Feedback from './components/Feedback';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-
-import Header from './components/Header';
 import { customStyles } from './components/Color';
 import Hero from './components/Hero';
 import About from './components/About';
+import Header from './components/Header';
 
 
 function App() {
