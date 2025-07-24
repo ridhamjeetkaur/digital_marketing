@@ -1,5 +1,4 @@
 import { BsEnvelopeFill, BsGeoAltFill, BsPhoneFill } from "react-icons/bs";
-import { colors } from "./Color";
 import { useState } from "react";
 
 // Contact Component

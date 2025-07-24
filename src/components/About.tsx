@@ -1,4 +1,3 @@
-import { BsCheckCircleFill, BsGraphUpArrow, BsLightbulbFill } from "react-icons/bs";
 import { colors } from "./Color";
 import about from "../assets/images/about.png"
 // About Component
