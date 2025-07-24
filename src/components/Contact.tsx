@@ -26,13 +26,10 @@ const Contact: React.FC = () => {
     setStatusMessage(null); // Clear previous messages
     setIsError(false);
 
-   
-
     try {
       // IMPORTANT: Ensure this URL matches your Express.js backend API endpoint.
       // If your React app is on port 3000 and Express on 3001, use the full URL.
-      const response = await fetch(`${process.env.REACT_APP_API_URL}api/contact`
-, {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}api/contact`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -138,7 +135,7 @@ const Contact: React.FC = () => {
           <div className="col-lg-4 col-md-6">
             <div className="contact-info-card">
               <div className="icon-wrapper">
-                <BsEnvelopeFill />
+                {BsEnvelopeFill({})}
               </div>
               <h4>Mail Here</h4>
               <p>hello@luez.com</p>
@@ -148,7 +145,7 @@ const Contact: React.FC = () => {
           <div className="col-lg-4 col-md-6">
             <div className="contact-info-card">
               <div className="icon-wrapper">
-                <BsGeoAltFill />
+                {BsGeoAltFill({})}
               </div>
               <h4>Visit Here</h4>
               <p>27 Division St, New York,</p>
@@ -158,7 +155,7 @@ const Contact: React.FC = () => {
           <div className="col-lg-4 col-md-12">
             <div className="contact-info-card">
               <div className="icon-wrapper">
-                <BsPhoneFill />
+                {BsPhoneFill({})}
               </div>
               <h4>Call Here</h4>
               <p>+123 456 7890</p>
@@ -170,4 +167,5 @@ const Contact: React.FC = () => {
     </section>
   );
 };
+
 export default Contact;

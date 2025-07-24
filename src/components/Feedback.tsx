@@ -12,7 +12,7 @@ interface FeedbackCardProps {
 const FeedbackCard: React.FC<FeedbackCardProps> = ({ quote, author, title }) => {
   return (
     <div className="card feedback-card p-4 text-center">
-      <BsChatQuoteFill className="quote-icon mx-auto" />
+      {BsChatQuoteFill({ className: "quote-icon mx-auto" })}
       <p className="mb-3">"{quote}"</p>
       <div className="mt-auto"> {/* Pushes content to the bottom */}
         <p className="author-name mb-0">{author}</p>
@@ -60,4 +60,5 @@ const Feedback: React.FC = () => {
     </section>
   );
 };
+
 export default Feedback;

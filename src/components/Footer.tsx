@@ -1,9 +1,5 @@
-import {
+import { BsFacebook, BsTwitter, BsInstagram, BsLinkedin } from 'react-icons/bs';
 
-  BsFacebook, BsTwitter, BsInstagram, BsLinkedin
-} from 'react-icons/bs'; // Import Bootstrap Icons
-
-// Footer Component
 const Footer: React.FC = () => {
   return (
     <footer className="footer-section">
@@ -13,10 +9,10 @@ const Footer: React.FC = () => {
             <h5 className="navbar-brand-custom mb-3">Zarexa</h5>
             <p className="text-secondary">Your partner in achieving digital marketing excellence.</p>
             <div className="d-flex social-icons mt-4 justify-content-center justify-content-md-start">
-              <a href="#" className="social-icon"><BsFacebook /></a>
-              <a href="#" className="social-icon"><BsTwitter /></a>
-              <a href="#" className="social-icon"><BsInstagram /></a>
-              <a href="#" className="social-icon"><BsLinkedin /></a>
+              <a href="#" className="social-icon">{BsFacebook({})}</a>
+              <a href="#" className="social-icon">{BsTwitter({})}</a>
+              <a href="#" className="social-icon">{BsInstagram({})}</a>
+              <a href="#" className="social-icon">{BsLinkedin({})}</a>
             </div>
           </div>
           <div className="col-lg-2 col-md-6 mb-4 mb-lg-0">
