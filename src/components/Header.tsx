@@ -5,7 +5,7 @@ const Header: React.FC = () => {
     <nav className="navbar navbar-expand-lg navbar-light navbar-custom py-3 sticky-top" >
       <div className="container">
         <img src={logo} alt="logo" height="80"  width="70"/>
-        <a className="navbar-brand navbar-brand-custom" href="#">Zarexa</a>
+        <a className="navbar-brand navbar-brand-custom" href="#hero">Zarexa</a>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
