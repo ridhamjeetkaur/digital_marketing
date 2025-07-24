@@ -31,7 +31,7 @@ const Contact: React.FC = () => {
     try {
       // IMPORTANT: Ensure this URL matches your Express.js backend API endpoint.
       // If your React app is on port 3000 and Express on 3001, use the full URL.
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/contact`
+      const response = await fetch(`${process.env.REACT_APP_API_URL}api/contact`
 , {
         method: 'POST',
         headers: {
@@ -45,6 +45,7 @@ const Contact: React.FC = () => {
         setIsError(false);
         setFormData({ name: '', email: '', subject: '', message: ''}); // Clear form
       } else {
+        console.log(formData)
         const errorData = await response.json();
         setStatusMessage(`Failed to send message: ${errorData.message || 'Unknown error'}`);
         setIsError(true);
