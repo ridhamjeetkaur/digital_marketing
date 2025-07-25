@@ -1,4 +1,3 @@
-import { BsFacebook, BsTwitter, BsInstagram, BsLinkedin } from 'react-icons/bs';
 import { colors } from './Color';
 import { Facebook, Instagram, Linkedin, Twitter } from 'lucide-react';
 
