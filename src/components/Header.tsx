@@ -1,37 +1,148 @@
-import logo from "../assets/images/Green White Professional Minimal Brand Logo (1).png"
+import { useEffect, useState } from "react";
+import { colors } from "./Color";
+import { Menu, X } from "lucide-react";
+
 // Header Component
-const Header: React.FC = () => {
+const Header = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const navLinks = [
+    { href: '#hero', label: 'Home' },
+    { href: '#services', label: 'Services' },
+    { href: '#about', label: 'About' },
+    { href: '#feedback', label: 'Feedback' },
+    { href: '#contact', label: 'Contact' }
+  ];
+
   return (
-    <nav className="navbar navbar-expand-lg navbar-light navbar-custom py-3 sticky-top" >
+    <nav 
+      className={`fixed-top transition-all duration-300 ${
+        isScrolled ? 'bg-white shadow-lg' : 'bg-white/95 backdrop-blur-sm'
+      }`}
+      style={{ zIndex: 1050 }}
+    >
       <div className="container">
-        <img src={logo} alt="logo" height="80"  width="70"/>
-        <a className="navbar-brand navbar-brand-custom" href="#hero">Zarexa</a>
-        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav ms-auto">
-            <li className="nav-item">
-              <a className="nav-link nav-link-custom" aria-current="page" href="#hero">Home</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link nav-link-custom" href="#services">Services</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link nav-link-custom" href="#about">About</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link nav-link-custom" href="#feedback">Feedback</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link nav-link-custom" href="#contact">Contact</a>
-            </li>
-          </ul>
-          <div className="d-flex ms-lg-3">
-            <button className="btn btn-outline-custom me-2">Log In</button>
-            <button className="btn btn-primary-custom">Sign Up</button>
+        <div className="d-flex justify-content-between align-items-center py-3">
+          {/* Logo */}
+          <div className="d-flex align-items-center">
+            <div 
+              className="rounded-circle d-flex align-items-center justify-content-center me-3"
+              style={{ 
+                width: '50px', 
+                height: '50px', 
+                background: `linear-gradient(135deg, ${colors.primary}, ${colors.accent})`,
+                color: 'white',
+                fontSize: '24px',
+                fontWeight: 'bold'
+              }}
+            >
+              Z
+            </div>
+            <span 
+              className="fw-bold fs-4"
+              style={{ color: colors.dark, letterSpacing: '-0.5px' }}
+            >
+              Zarexa
+            </span>
           </div>
+
+          {/* Desktop Navigation */}
+          <div className="d-none d-lg-flex align-items-center">
+            <ul className="nav me-4">
+              {navLinks.map((link, index) => (
+                <li key={index} className="nav-item">
+                  <a 
+                    href={link.href}
+                    className="nav-link px-3 py-2 mx-1 rounded-pill transition-all"
+                    style={{ 
+                      color: colors.gray,
+                      fontWeight: '500',
+                      transition: 'all 0.3s ease'
+                    }}
+                    onMouseEnter={(e) => {
+                      const target = e.target as HTMLAnchorElement;
+                      target.style.backgroundColor = colors.lightGray;
+                      target.style.color = colors.primary;
+                    }}
+                    onMouseLeave={(e) => {
+                      const target = e.target as HTMLAnchorElement;
+                      target.style.backgroundColor = 'transparent';
+                      target.style.color = colors.gray;
+                    }}
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <div className="d-flex gap-2">
+              <button 
+                className="btn btn-outline-primary px-4 py-2 rounded-pill fw-medium"
+                style={{ borderWidth: '2px' }}
+              >
+                Log In
+              </button>
+              <button 
+                className="btn text-white px-4 py-2 rounded-pill fw-medium shadow-sm"
+                style={{ 
+                  background: `linear-gradient(135deg, ${colors.primary}, ${colors.accent})`,
+                  border: 'none'
+                }}
+              >
+                Sign Up
+              </button>
+            </div>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button 
+            className="btn d-lg-none p-2"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            style={{ border: 'none', backgroundColor: 'transparent' }}
+          >
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
+
+        {/* Mobile Navigation */}
+        {isMobileMenuOpen && (
+          <div className="d-lg-none pb-4">
+            <div className="border-top pt-4">
+              {navLinks.map((link, index) => (
+                <a 
+                  key={index}
+                  href={link.href}
+                  className="d-block py-2 px-3 text-decoration-none rounded mb-2"
+                  style={{ color: colors.gray }}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {link.label}
+                </a>
+              ))}
+              <div className="d-flex flex-column gap-2 mt-3">
+                <button className="btn btn-outline-primary rounded-pill">Log In</button>
+                <button 
+                  className="btn text-white rounded-pill"
+                  style={{ 
+                    background: `linear-gradient(135deg, ${colors.primary}, ${colors.accent})`,
+                    border: 'none'
+                  }}
+                >
+                  Sign Up
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </nav>
   );

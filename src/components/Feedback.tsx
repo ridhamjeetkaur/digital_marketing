@@ -1,58 +1,95 @@
 import {
   BsChatQuoteFill
 } from 'react-icons/bs'; // Import Bootstrap Icons
+import { colors } from './Color';
+import { Star } from 'lucide-react';
 
 // Feedback Component
-interface FeedbackCardProps {
-  quote: string;
-  author: string;
-  title: string;
-}
-
-const FeedbackCard: React.FC<FeedbackCardProps> = ({ quote, author, title }) => {
-  return (
-    <div className="card feedback-card p-4 text-center">
-      {BsChatQuoteFill({ className: "quote-icon mx-auto" })}
-      <p className="mb-3">"{quote}"</p>
-      <div className="mt-auto"> {/* Pushes content to the bottom */}
-        <p className="author-name mb-0">{author}</p>
-        <p className="author-title">{title}</p>
-      </div>
-    </div>
-  );
-};
-
-const Feedback: React.FC = () => {
+const Feedback = () => {
   const testimonials = [
     {
-      quote: "DigitalMarketer transformed our email campaigns. The automation features are incredibly powerful and easy to use!",
-      author: "Jane Doe",
-      title: "Marketing Director, Tech Solutions Inc."
+      name: 'Sarah Johnson',
+      role: 'Marketing Director',
+      company: 'TechCorp',
+      content: 'Zarexa transformed our email marketing. Our open rates increased by 150% in just 3 months!',
+      rating: 5
     },
     {
-      quote: "The AI marketing tools gave us insights we never had before. Our ROI has significantly improved since we started using it.",
-      author: "John Smith",
-      title: "CEO, Global Innovations"
+      name: 'Mike Chen',
+      role: 'CEO',
+      company: 'StartupXYZ',
+      content: 'The automation features saved us countless hours. Best marketing investment we\'ve made.',
+      rating: 5
     },
     {
-      quote: "Their website builder is fantastic! We launched our new site in record time, and it looks professional on all devices.",
-      author: "Emily White",
-      title: "Founder, Creative Designs"
+      name: 'Emily Davis',
+      role: 'Growth Manager',
+      company: 'EcomBrand',
+      content: 'Incredible ROI and the support team is amazing. Highly recommend to any growing business.',
+      rating: 5
     }
   ];
 
   return (
-    <section id="feedback" className="feedback-section">
-      <div className="container">
-        <h2 className="text-center display-4 fw-bold text-dark mb-5">What Our Clients Say</h2>
-        <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+    <section id="feedback" className="py-5" style={{ backgroundColor: colors.light }}>
+      <div className="container py-5">
+        <div className="text-center mb-5">
+          <div 
+            className="badge rounded-pill px-3 py-2 mb-3"
+            style={{ 
+              backgroundColor: `${colors.primary}15`,
+              color: colors.primary,
+              fontSize: '14px',
+              fontWeight: '600'
+            }}
+          >
+            Testimonials
+          </div>
+          <h2 className="display-5 fw-bold mb-4" style={{ color: colors.dark }}>
+            What Our Customers Say
+          </h2>
+          <p className="fs-5 mx-auto" style={{ color: colors.gray, maxWidth: '600px' }}>
+            Don't just take our word for it. Here's what real customers have to say about their experience.
+          </p>
+        </div>
+
+        <div className="row g-4">
           {testimonials.map((testimonial, index) => (
-            <div className="col" key={index}>
-              <FeedbackCard
-                quote={testimonial.quote}
-                author={testimonial.author}
-                title={testimonial.title}
-              />
+            <div key={index} className="col-lg-4">
+              <div 
+                className="card h-100 border-0 shadow-sm rounded-4 p-4"
+                style={{ backgroundColor: 'white' }}
+              >
+                <div className="mb-3">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <Star key={i} size={16} fill={colors.warning} color={colors.warning} />
+                  ))}
+                </div>
+                <p className="mb-4" style={{ color: colors.gray, lineHeight: '1.6' }}>
+                  "{testimonial.content}"
+                </p>
+                <div className="d-flex align-items-center mt-auto">
+                  <div 
+                    className="rounded-circle me-3 d-flex align-items-center justify-content-center fw-bold"
+                    style={{ 
+                      width: '50px', 
+                      height: '50px', 
+                      backgroundColor: colors.primary,
+                      color: 'white'
+                    }}
+                  >
+                    {testimonial.name.charAt(0)}
+                  </div>
+                  <div>
+                    <div className="fw-bold" style={{ color: colors.dark }}>
+                      {testimonial.name}
+                    </div>
+                    <small style={{ color: colors.gray }}>
+                      {testimonial.role} at {testimonial.company}
+                    </small>
+                  </div>
+                </div>
+              </div>
             </div>
           ))}
         </div>
@@ -60,5 +97,4 @@ const Feedback: React.FC = () => {
     </section>
   );
 };
-
 export default Feedback;

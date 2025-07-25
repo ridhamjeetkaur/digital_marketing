@@ -1,51 +1,100 @@
-import {
-  BsEnvelope, BsGear, BsGlobe, BsPencilSquare,
-  BsHandThumbsUp, BsPeople
-} from 'react-icons/bs';
+import { CheckCircle, Mail, Shield, Target, Zap } from "lucide-react";
+import { colors } from "./Color";
 
-// Updated interface to accept the icon as a function that returns ReactNode
-interface ServiceItemProps {
-  icon: () => React.ReactNode;
-  title: string;
-  description: string;
-}
 
-const ServiceItem: React.FC<ServiceItemProps> = ({ icon, title, description }) => {
-  return (
-    <div className="card service-card text-center p-4">
-      <div className="service-icon-wrapper mx-auto">
-        {icon()}
-      </div>
-      <div className="card-body p-0">
-        <h3 className="h5 card-title">{title}</h3>
-        <p className="card-text">{description}</p>
-      </div>
-    </div>
-  );
-};
-
-const Services: React.FC = () => {
-  const servicesData = [
-    { icon: () => BsEnvelope({}), title: 'Email Marketing', description: 'Craft compelling emails that convert leads into loyal customers.' },
-    { icon: () => BsGear({}), title: 'Marketing Automation', description: 'Automate your campaigns for efficiency and consistent customer engagement.' },
-    { icon: () => BsGlobe({}), title: 'Website Design', description: 'Build stunning, responsive websites that drive traffic and conversions.' },
-    { icon: () => BsPencilSquare({}), title: 'Content Creation', description: 'Develop engaging content that resonates with your audience and builds brand authority.' },
-    { icon: () => BsHandThumbsUp({}), title: 'Social Media Marketing', description: 'Boost your brand presence and engage with your audience across all platforms.' },
-    { icon: () => BsPeople({}), title: 'Audience Management', description: 'Segment and manage your audience for highly targeted and effective campaigns.' },
+// Services Component
+const Services = () => {
+  const services = [
+    {
+      icon: <Mail size={32} />,
+      title: 'Email Marketing',
+      description: 'Create beautiful, personalized email campaigns that convert.',
+      features: ['Drag & Drop Builder', 'A/B Testing', 'Automation']
+    },
+    {
+      icon: <Target size={32} />,
+      title: 'Audience Targeting',
+      description: 'Reach the right people at the right time with precision targeting.',
+      features: ['Behavioral Targeting', 'Custom Segments', 'Lookalike Audiences']
+    },
+    {
+      icon: <Zap size={32} />,
+      title: 'Marketing Automation',
+      description: 'Set up automated workflows that work while you sleep.',
+      features: ['Trigger-based Flows', 'Lead Nurturing', 'Customer Journey']
+    },
+    {
+      icon: <Shield size={32} />,
+      title: 'Analytics & Reporting',
+      description: 'Get deep insights into your campaign performance.',
+      features: ['Real-time Data', 'Custom Reports', 'ROI Tracking']
+    }
   ];
 
   return (
-    <section id="services" className="services-section">
-      <div className="container">
-        <h2 className="text-center display-4 fw-bold text-dark mb-5">Our Solutions and Services</h2>
-        <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
-          {servicesData.map((service, index) => (
-            <div className="col" key={index}>
-              <ServiceItem
-                icon={service.icon}
-                title={service.title}
-                description={service.description}
-              />
+    <section id="services" className="py-5" style={{ backgroundColor: colors.light }}>
+      <div className="container py-5">
+        <div className="text-center mb-5">
+          <div 
+            className="badge rounded-pill px-3 py-2 mb-3"
+            style={{ 
+              backgroundColor: `${colors.primary}15`,
+              color: colors.primary,
+              fontSize: '14px',
+              fontWeight: '600'
+            }}
+          >
+            Our Services
+          </div>
+          <h2 className="display-5 fw-bold mb-4" style={{ color: colors.dark }}>
+            Everything You Need to Succeed
+          </h2>
+          <p className="fs-5 mx-auto" style={{ color: colors.gray, maxWidth: '600px' }}>
+            Comprehensive marketing tools designed to help your business grow and thrive in the digital landscape.
+          </p>
+        </div>
+
+        <div className="row g-4">
+          {services.map((service, index) => (
+            <div key={index} className="col-lg-6 col-xl-3">
+              <div 
+                className="card h-100 border-0 shadow-sm rounded-4 p-4 transition-all"
+                style={{ 
+                  backgroundColor: 'white',
+                  transition: 'transform 0.3s ease, box-shadow 0.3s ease'
+                }}
+                onMouseEnter={(e) => {
+                  const target = e.currentTarget as HTMLDivElement;
+                  target.style.transform = 'translateY(-10px)';
+                  target.style.boxShadow = '0 20px 40px rgba(0,0,0,0.1)';
+                }}
+                onMouseLeave={(e) => {
+                  const target = e.currentTarget as HTMLDivElement;
+                  target.style.transform = 'translateY(0)';
+                  target.style.boxShadow = '0 4px 6px rgba(0,0,0,0.05)';
+                }}
+              >
+                <div 
+                  className="rounded-3 d-inline-flex p-3 mb-4"
+                  style={{ backgroundColor: `${colors.primary}15`, color: colors.primary }}
+                >
+                  {service.icon}
+                </div>
+                <h5 className="fw-bold mb-3" style={{ color: colors.dark }}>
+                  {service.title}
+                </h5>
+                <p style={{ color: colors.gray, lineHeight: '1.6' }}>
+                  {service.description}
+                </p>
+                <ul className="list-unstyled mt-4">
+                  {service.features.map((feature, idx) => (
+                    <li key={idx} className="d-flex align-items-center mb-2">
+                      <CheckCircle size={16} className="me-2" style={{ color: colors.success }} />
+                      <small style={{ color: colors.gray }}>{feature}</small>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           ))}
         </div>
@@ -53,5 +102,4 @@ const Services: React.FC = () => {
     </section>
   );
 };
-
 export default Services;

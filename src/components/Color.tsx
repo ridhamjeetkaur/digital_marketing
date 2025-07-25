@@ -14,6 +14,15 @@ import React from "react"
   softGray: '#adb5bd',
   brown: '#CD5C5C',
   skin:'#fffef0',
+   accent: '#3b82f6',
+  secondary: '#1e40af',
+  success: '#10b981',
+  warning: '#f59e0b',
+  danger: '#ef4444',
+  dark: '#1f2937',
+  light: '#f8fafc',
+  gray: '#6b7280',
+
 };
 
 // Custom CSS for the new color theme and specific styles

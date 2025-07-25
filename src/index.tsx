@@ -6,6 +6,8 @@ import reportWebVitals from './reportWebVitals';
 import '@ionic/react/css/core.css';
 // src/index.tsx or src/main.tsx
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
