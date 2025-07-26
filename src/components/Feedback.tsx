@@ -48,7 +48,7 @@ const Feedback = () => {
           <h2 className="display-5 fw-bold mb-4" style={{ color: colors.dark }}>
             What Our Customers Say
           </h2>
-          <p className="fs-5 mx-auto" style={{ color: colors.gray, maxWidth: '600px' }}>
+          <p className="mx-auto" style={{ color: colors.gray, maxWidth: '600px' ,fontSize:"15px"}}>
             Don't just take our word for it. Here's what real customers have to say about their experience.
           </p>
         </div>

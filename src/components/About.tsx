@@ -89,8 +89,8 @@ const About = () => {
               </h2>
 
               <p
-                className="fs-6 mb-4"
-                style={{ color: colors.gray, lineHeight: "1.7" }}
+                className="mb-4"
+                style={{ color: colors.gray, lineHeight: "1.7" ,fontSize:"15px"}}
               >
                 DigitalMarketer was founded with a clear vision: to democratize
                 digital marketing. We saw a need for powerful, yet accessible,
@@ -99,8 +99,8 @@ const About = () => {
               </p>
 
               <p
-                className="fs-6 mb-4"
-                style={{ color: colors.gray, lineHeight: "1.7" }}
+                className="mb-4"
+                style={{ color: colors.gray, lineHeight: "1.7" ,fontSize:"15px"}}
               >
                 Our journey began with a small team and a big idea, and today,
                 we're proud to be a trusted partner for thousands of growing
@@ -108,8 +108,8 @@ const About = () => {
               </p>
 
               <p
-                className="fs-6 mb-5"
-                style={{ color: colors.gray, lineHeight: "1.7" }}
+                className="mb-5"
+                style={{ color: colors.gray, lineHeight: "1.7" ,fontSize:"15px"}}
               >
                 Our mission is to empower you with the knowledge, resources, and
                 technology to not just compete, but to lead in your industry.
@@ -119,7 +119,8 @@ const About = () => {
                 className="btn text-white px-4 py-3 rounded-pill fw-medium"
                 style={{
                   background: `linear-gradient(135deg, ${colors.primary}, ${colors.accent})`,
-                  border: "none",
+                  border: "none"
+                  ,fontSize:"15px"
                 }}
               >
                 Learn More About Us
@@ -131,7 +132,7 @@ const About = () => {
         {/* Stats */}
         <div className="row text-center">
           <div className="col-12 mb-5">
-            <h3 className="fw-bold" style={{ color: colors.dark }}>
+            <h3 className="fw-bold" style={{ color: colors.dark ,fontSize:"23px"}}>
               Trusted by Industry Leaders
             </h3>
           </div>
@@ -147,7 +148,7 @@ const About = () => {
                 >
                   {stat.number}
                 </div>
-                <div style={{ color: colors.gray, fontWeight: "500" }}>
+                <div style={{ color: colors.gray, fontWeight: "500",fontSize:"14px" }}>
                   {stat.label}
                 </div>
               </div>

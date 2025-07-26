@@ -14,34 +14,41 @@ const colors = {
 const Hero: React.FC = () => {
   return (
     <section className="py-5 overflow-hidden">
-<br /><br /><br /><br />   <br />   <div className="container">
+      <br />
+      <br />
+      <br />
+      <br /> <br /> <br />{" "}
+     
+      <div className="container">
         <div className="row align-items-center justify-content-between g-5">
           {/* Left Column - Text */}
           <div className="col-lg-6">
             <span
               className="badge rounded-pill text-bg-warning mb-4 px-3 py-2"
-              style={{ backgroundColor: colors.accent, color: "#fff" }}
+              style={{ backgroundColor: colors.accent, color: "#fff", fontSize:"12px" }}
             >
-              <span style={{ color: "#fff" }}>#1 Platform</span> for your
+              <span style={{ color: "#fff", fontSize:"15px" }}>#1 Platform</span> for your
               Business
             </span>
 
-            <h1 className="display-4 fw-bold mb-4">
-              Empowering Your <span style={{ color: colors.primary }}>Digital Dreams</span>
+            <h1 className="display-4 fw-bold mb-4" >
+              Empowering Your{" "}
+              <span style={{ color: colors.primary ,fontSize:"6rem"}}>Digital Dreams</span>
             </h1>
 
-            <p className="lead text-muted mb-4">
+            <p className="lead text-muted mb-4" style={{ fontSize: '1.50rem' }} >
               We craft stunning websites and applications to help you grow your
               brand. Let’s build something great together!
             </p>
 
             <div className="d-flex gap-3 flex-wrap">
-              <a href="#get-started" className="btn btn-primary px-4 py-2">
+              <a href="#get-started" className="btn btn-primary px-4 py-2"style={{ fontSize: '1.50rem' }} >
                 Get Started
               </a>
               <a
                 href="#services"
                 className="btn btn-outline-secondary d-flex align-items-center gap-2"
+                style={{ fontSize: '1.50rem' }} 
               >
                 <span>Explore Services</span>
                 <IonIcon icon={arrowForwardOutline} />
@@ -52,54 +59,60 @@ const Hero: React.FC = () => {
           {/* Right Column - Image */}
           <div className="col-lg-6">
             <div className="text-center position-relative">
-              <div 
+              <div
                 className="rounded-4 shadow-lg p-3 bg-white position-relative mx-auto"
-                style={{ transform: 'rotate(2deg)', maxWidth: '100%' }}
+                style={{ transform: "rotate(2deg)", maxWidth: "100%" }}
               >
-                <div 
+                <div
                   className="rounded-3 overflow-hidden"
-                  style={{ 
+                  style={{
                     background: `linear-gradient(135deg, ${colors.primary}10, ${colors.accent}10)`,
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center'
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
                   }}
                 >
-                  <img 
-                    src={main} 
-                    alt="Main Visual" 
+                  <img
+                    src={main}
+                    alt="Main Visual"
                     className="img-fluid"
                     style={{
-                      width: '100%',
-                      height: 'auto',
-                      maxHeight: '400px',
-                      objectFit: 'contain'
+                      width: "100%",
+                      height: "auto",
+                      maxHeight: "400px",
+                      objectFit: "contain",
                     }}
                   />
                 </div>
               </div>
 
               {/* Floating Elements */}
-              <div 
+              <div
                 className="position-absolute top-0 start-0 bg-white rounded-3 shadow-sm p-3"
-                style={{ transform: 'translate(-20px, 50px)', zIndex: 3 }}
+                style={{ transform: "translate(-20px, 50px)", zIndex: 3 }}
               >
                 <div className="d-flex align-items-center gap-2">
-                  <div 
+                  <div
                     className="rounded-circle"
-                    style={{ width: '8px', height: '8px', backgroundColor: colors.success }}
+                    style={{
+                      width: "8px",
+                      height: "8px",
+                      backgroundColor: colors.success,
+                    }}
                   />
-                  <small className="fw-medium">Campaign Active</small>
+                  <small className="fw-medium" style={{ fontSize: '1.30rem' }} >Campaign Active</small>
                 </div>
               </div>
-              
-              <div 
+
+              <div
                 className="position-absolute bottom-0 end-0 bg-white rounded-3 shadow-sm p-3"
-                style={{ transform: 'translate(20px, -50px)', zIndex: 3 }}
+                style={{ transform: "translate(20px, -50px)", zIndex: 3 }}
               >
                 <div className="text-center">
-                  <div className="fw-bold" style={{ color: colors.primary }}>+127%</div>
-                  <small style={{ color: colors.gray }}>Growth</small>
+                  <div className="fw-bold" style={{ color: colors.primary , fontSize:"1.3rem"}}>
+                    +127%
+                  </div>
+                  <small style={{ color: colors.gray , fontSize:"1.3rem"}}>Growth</small>
                 </div>
               </div>
             </div>

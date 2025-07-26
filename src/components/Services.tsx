@@ -40,18 +40,18 @@ const Services = () => {
             style={{ 
               backgroundColor: `${colors.primary}15`,
               color: colors.primary,
-              fontSize: '14px',
+              fontSize: '18px',
               fontWeight: '600'
             }}
           >
             Our Services
           </div>
-          <h2 className="display-5 fw-bold mb-4" style={{ color: colors.dark }}>
+          <h2 className="display-5 fw-bold mb-4" style={{ color: colors.dark ,fontSize:"3rem"}}>
             Everything You Need to Succeed
           </h2>
-          <p className="fs-5 mx-auto" style={{ color: colors.gray, maxWidth: '600px' }}>
-            Comprehensive marketing tools designed to help your business grow and thrive in the digital landscape.
-          </p>
+          <p className="mx-auto" style={{ color: colors.gray, fontSize: "18px" }}> {/* Example: 24 pixels */}
+  Comprehensive marketing tools designed to help your business grow and thrive in the digital landscape.
+</p>
         </div>
 
         <div className="row g-4">
@@ -80,17 +80,17 @@ const Services = () => {
                 >
                   {service.icon}
                 </div>
-                <h5 className="fw-bold mb-3" style={{ color: colors.dark }}>
+                <h5 className="fw-bold mb-3" style={{ color: colors.dark ,fontSize:"20px"}}>
                   {service.title}
                 </h5>
-                <p style={{ color: colors.gray, lineHeight: '1.6' }}>
+                <p style={{ color: colors.gray, lineHeight: '1.6',fontSize:"15px" }}>
                   {service.description}
                 </p>
                 <ul className="list-unstyled mt-4">
                   {service.features.map((feature, idx) => (
                     <li key={idx} className="d-flex align-items-center mb-2">
                       <CheckCircle size={16} className="me-2" style={{ color: colors.success }} />
-                      <small style={{ color: colors.gray }}>{feature}</small>
+                      <small style={{ color: colors.gray ,fontSize:"13px"}}>{feature}</small>
                     </li>
                   ))}
                 </ul>
