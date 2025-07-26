@@ -14,8 +14,10 @@
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "bootstrap": "^5.3.7",
+    "dotenv": "^17.2.1",
     "ionicons": "^8.0.13",
     "lucide-react": "^0.525.0",
+    "mongoose": "^8.16.5",
     "react": "^19.1.0",
     "react-bootstrap": "^2.10.10",
     "react-dom": "^19.1.0",
@@ -53,6 +55,7 @@
     ]
   },
   "devDependencies": {
+    "@types/mongoose": "^5.11.96",
     "autoprefixer": "^10.4.21",
     "postcss": "^8.5.6",
     "tailwindcss": "^4.1.11"

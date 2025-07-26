@@ -96,7 +96,10 @@ const Footer = () => {
               If you want multiple categories, you'd structure `footerLinks` differently (e.g., an array of objects, each object being a category with its own links).
               For now, I'm putting all `footerLinks` under a single "Quick Links" heading. */}
           <div className="col-lg-2 col-md-3 col-sm-6 offset-lg-1"> {/* Added offset for better spacing */}
-            <h6 className="fw-bold text-white mb-3">Quick Links</h6> {/* Static heading */}
+            <h6 className="fw-bold text-white mb-3" style={{
+                      
+                       fontSize: '16px' 
+                    }}>Quick Links</h6> {/* Static heading */}
             <ul className="list-unstyled">
               {footerLinks.map((link, index) => ( // Correctly mapping the array
                 <li key={index} className="mb-2"> {/* Using index as key, or better, add an id to your link objects */}
@@ -105,7 +108,8 @@ const Footer = () => {
                     className="text-decoration-none"
                     style={{
                       color: colors.mutedGray,
-                      transition: 'color 0.3s ease'
+                      transition: 'color 0.3s ease',
+                       fontSize: '14px' 
                     }}
                     onMouseEnter={(e) => {
                       const target = e.currentTarget as HTMLAnchorElement;
