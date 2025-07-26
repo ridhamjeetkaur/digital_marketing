@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { colors } from "./Color";
 import { Menu, X } from "lucide-react";
+import logo from "../assets/images/logo.png"
 
 // Header Component
 const Header = () => {
@@ -34,23 +35,11 @@ const Header = () => {
         <div className="d-flex justify-content-between align-items-center py-3">
           {/* Logo */}
           <div className="d-flex align-items-center">
-            <div 
-              className="rounded-circle d-flex align-items-center justify-content-center me-3"
-              style={{ 
-                width: '50px', 
-                height: '50px', 
-                background: `linear-gradient(135deg, ${colors.primary}, ${colors.accent})`,
-                color: 'white',
-                fontSize: '24px',
-                fontWeight: 'bold'
-              }}
-            >
-              Z
-            </div>
+              <img src={logo} alt="logo" height="70px" width="70px"/>
             <span 
               className="fw-bold fs-4"
               style={{ color: colors.dark, letterSpacing: '-0.5px' }}
-            >
+            > 
               Zarexa
             </span>
           </div>

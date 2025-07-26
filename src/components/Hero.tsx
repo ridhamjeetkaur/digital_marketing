@@ -1,142 +1,84 @@
-import { ArrowRight } from "lucide-react";
-import { colors } from "./Color";
+import React from "react";
+import { IonIcon } from "@ionic/react";
+import { arrowForwardOutline } from "ionicons/icons";
+import main from "../assets/images/front.jpg";
 
-// Hero Component
-const Hero = () => {
+const colors = {
+  primary: "#6366f1", // Indigo-500
+  secondary: "#c7d2fe", // Indigo-200
+  accent: "#fbbf24", // Yellow-400
+  success: "#10b981", // Emerald-500
+  gray: "#6b7280", // Gray-500
+};
+
+const Hero: React.FC = () => {
   return (
-    <section 
-      id="hero" 
-      className="position-relative overflow-hidden"
-      style={{ 
-        minHeight: '100vh',
-        background: `linear-gradient(135deg, ${colors.light} 0%, #ffffff 100%)`,
-        paddingTop: '120px'
-      }}
-    >
-      {/* Background Elements */}
-      <div className="position-absolute top-0 end-0 opacity-25" style={{ zIndex: 1 }}>
-        <div 
-          className="rounded-circle"
-          style={{
-            width: '400px',
-            height: '400px',
-            background: `linear-gradient(135deg, ${colors.primary}20, ${colors.accent}20)`,
-            transform: 'translate(50%, -50%)'
-          }}
-        />
-      </div>
+    <section className="py-5 overflow-hidden">
+<br /><br /><br /><br />   <br />   <div className="container">
+        <div className="row align-items-center justify-content-between g-5">
+          {/* Left Column - Text */}
+          <div className="col-lg-6">
+            <span
+              className="badge rounded-pill text-bg-warning mb-4 px-3 py-2"
+              style={{ backgroundColor: colors.accent, color: "#fff" }}
+            >
+              <span style={{ color: "#fff" }}>#1 Platform</span> for your
+              Business
+            </span>
 
-      <div className="container position-relative" style={{ zIndex: 2 }}>
-        <div className="row align-items-center min-vh-100 py-5">
-          <div className="col-lg-6 mb-5 mb-lg-0">
-            <div className="text-center text-lg-start">
-              <div 
-                className="badge rounded-pill px-3 py-2 mb-4"
-                style={{ 
-                  backgroundColor: `${colors.primary}15`,
-                  color: colors.primary,
-                  fontSize: '14px',
-                  fontWeight: '600'
-                }}
-              >
-                🚀 Digital Marketing Platform
-              </div>
-              
-              <h1 
-                className="display-4 fw-bold mb-4"
-                style={{ 
-                  color: colors.dark,
-                  lineHeight: '1.2',
-                  letterSpacing: '-1px'
-                }}
-              >
-                Simplify Your Marketing,{' '}
-                <span 
-                  style={{ 
-                    background: `linear-gradient(135deg, ${colors.primary}, ${colors.accent})`,
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    backgroundClip: 'text'
-                  }}
-                >
-                  Multiply Your Results
-                </span>
-              </h1>
-              
-              <p 
-                className="fs-5 mb-4"
-                style={{ color: colors.gray, lineHeight: '1.6' }}
-              >
-                Create personalized emails, target precisely with behavior-based automations and segments, and optimize with real-time reporting.
-              </p>
-              
-              <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center justify-content-lg-start">
-                <button 
-                  className="btn btn-lg text-white px-5 py-3 rounded-pill fw-medium shadow-lg"
-                  style={{ 
-                    background: `linear-gradient(135deg, ${colors.primary}, ${colors.accent})`,
-                    border: 'none',
-                    transition: 'transform 0.3s ease'
-                  }}
-                  onMouseEnter={(e) => {
-                    const target = e.currentTarget as HTMLButtonElement;
-                    target.style.transform = 'translateY(-2px)';
-                  }}
-                  onMouseLeave={(e) => {
-                    const target = e.currentTarget as HTMLButtonElement;
-                    target.style.transform = 'translateY(0)';
-                  }}
-                >
-                  Get Started <ArrowRight size={20} className="ms-2" />
-                </button>
-                <button 
-                  className="btn btn-lg btn-outline-primary px-5 py-3 rounded-pill fw-medium"
-                  style={{ borderWidth: '2px' }}
-                >
-                  Watch Demo
-                </button>
-              </div>
+            <h1 className="display-4 fw-bold mb-4">
+              Empowering Your <span style={{ color: colors.primary }}>Digital Dreams</span>
+            </h1>
 
-              {/* Stats */}
-              <div className="row mt-5 text-center text-lg-start">
-                <div className="col-4">
-                  <div className="fw-bold fs-4" style={{ color: colors.primary }}>10k+</div>
-                  <small style={{ color: colors.gray }}>Active Users</small>
-                </div>
-                <div className="col-4">
-                  <div className="fw-bold fs-4" style={{ color: colors.primary }}>99%</div>
-                  <small style={{ color: colors.gray }}>Uptime</small>
-                </div>
-                <div className="col-4">
-                  <div className="fw-bold fs-4" style={{ color: colors.primary }}>24/7</div>
-                  <small style={{ color: colors.gray }}>Support</small>
-                </div>
-              </div>
+            <p className="lead text-muted mb-4">
+              We craft stunning websites and applications to help you grow your
+              brand. Let’s build something great together!
+            </p>
+
+            <div className="d-flex gap-3 flex-wrap">
+              <a href="#get-started" className="btn btn-primary px-4 py-2">
+                Get Started
+              </a>
+              <a
+                href="#services"
+                className="btn btn-outline-secondary d-flex align-items-center gap-2"
+              >
+                <span>Explore Services</span>
+                <IonIcon icon={arrowForwardOutline} />
+              </a>
             </div>
           </div>
-          
+
+          {/* Right Column - Image */}
           <div className="col-lg-6">
             <div className="text-center position-relative">
               <div 
-                className="rounded-4 shadow-lg p-4 bg-white position-relative"
-                style={{ transform: 'rotate(2deg)' }}
+                className="rounded-4 shadow-lg p-3 bg-white position-relative mx-auto"
+                style={{ transform: 'rotate(2deg)', maxWidth: '100%' }}
               >
                 <div 
-                  className="rounded-3"
+                  className="rounded-3 overflow-hidden"
                   style={{ 
-                    height: '400px',
                     background: `linear-gradient(135deg, ${colors.primary}10, ${colors.accent}10)`,
                     display: 'flex',
                     alignItems: 'center',
-                    justifyContent: 'center',
-                    fontSize: '18px',
-                    color: colors.gray
+                    justifyContent: 'center'
                   }}
                 >
-                  📊 Digital Marketing Dashboard
+                  <img 
+                    src={main} 
+                    alt="Main Visual" 
+                    className="img-fluid"
+                    style={{
+                      width: '100%',
+                      height: 'auto',
+                      maxHeight: '400px',
+                      objectFit: 'contain'
+                    }}
+                  />
                 </div>
               </div>
-              
+
               {/* Floating Elements */}
               <div 
                 className="position-absolute top-0 start-0 bg-white rounded-3 shadow-sm p-3"
