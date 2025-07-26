@@ -35,12 +35,15 @@ const Header = () => {
         <div className="d-flex justify-content-between align-items-center py-3">
           {/* Logo */}
           <div className="d-flex align-items-center">
-              <img src={logo} alt="logo" height="70px" width="70px"/>
+              <span
+              style={{ marginBottom:'20px',marginLeft:'5px'}}
+            > <img src={logo} alt="logo" height="90px" width="90px"/>
+             </span>
             <span 
               className="fw-bold fs-4"
-              style={{ color: colors.dark, letterSpacing: '-0.5px' }}
-            > 
-              Zarexa
+              style={{ color: colors.dark, letterSpacing: '-0.5px'}}
+            > <h1>Zarexa</h1>
+              
             </span>
           </div>
 
@@ -54,7 +57,8 @@ const Header = () => {
                     className="nav-link px-3 py-2 mx-1 rounded-pill transition-all"
                     style={{ 
                       color: colors.gray,
-                      fontWeight: '500',
+                      fontSize: '14px', // Or '1.2em', 'large', etc
+                      fontWeight: '900',
                       transition: 'all 0.3s ease'
                     }}
                     onMouseEnter={(e) => {
@@ -73,23 +77,7 @@ const Header = () => {
                 </li>
               ))}
             </ul>
-            <div className="d-flex gap-2">
-              <button 
-                className="btn btn-outline-primary px-4 py-2 rounded-pill fw-medium"
-                style={{ borderWidth: '2px' }}
-              >
-                Log In
-              </button>
-              <button 
-                className="btn text-white px-4 py-2 rounded-pill fw-medium shadow-sm"
-                style={{ 
-                  background: `linear-gradient(135deg, ${colors.primary}, ${colors.accent})`,
-                  border: 'none'
-                }}
-              >
-                Sign Up
-              </button>
-            </div>
+            
           </div>
 
           {/* Mobile Menu Button */}
@@ -117,19 +105,7 @@ const Header = () => {
                   {link.label}
                 </a>
               ))}
-              <div className="d-flex flex-column gap-2 mt-3">
-                <button className="btn btn-outline-primary rounded-pill">Log In</button>
-                <button 
-                  className="btn text-white rounded-pill"
-                  style={{ 
-                    background: `linear-gradient(135deg, ${colors.primary}, ${colors.accent})`,
-                    border: 'none'
-                  }}
-                >
-                  Sign Up
-                </button>
-              </div>
-            </div>
+             </div>
           </div>
         )}
       </div>
