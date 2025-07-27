@@ -37,11 +37,11 @@ const Header = () => {
           <div className="d-flex align-items-center">
               <span
               style={{ marginBottom:'20px',marginLeft:'5px'}}
-            > <img src={logo} alt="logo" height="120px" width="120px"/>
+            > <img src={logo} alt="logo" height="80px" width="80px"/>
              </span>
             <span 
               className="fw-bold fs-4"
-              style={{ color: colors.dark, letterSpacing: '-0.5px'}}
+              style={{ color: colors.dark, letterSpacing: '-0.2px'}}
             > <h1></h1>
               
             </span>

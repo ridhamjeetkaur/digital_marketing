@@ -147,8 +147,9 @@ const Contact: React.FC = () => {
                 {BsGeoAltFill({})}
               </div>
               <h4>Visit Here</h4>
-              <p>27 Division St, New York,</p>
-              <p>NY 10002, USA</p>
+              <p>STEP-GNDEC, Gill's Garden Road
+</p>
+              <p>Ludhiana – 141006, India</p>
             </div>
           </div>
           <div className="col-lg-4 col-md-12">

@@ -1,36 +1,47 @@
-import { CheckCircle, Mail, Shield, Target, Zap } from "lucide-react";
+import { CheckCircle, Feather, Globe, Mail, Shield, ShoppingCart, Target, Users, Zap } from "lucide-react";
 import { colors } from "./Color";
 
 
 // Services Component
 const Services = () => {
   const services = [
-    {
-      icon: <Mail size={32} />,
-      title: 'Email Marketing',
-      description: 'Create beautiful, personalized email campaigns that convert.',
-      features: ['Drag & Drop Builder', 'A/B Testing', 'Automation']
-    },
-    {
-      icon: <Target size={32} />,
-      title: 'Audience Targeting',
-      description: 'Reach the right people at the right time with precision targeting.',
-      features: ['Behavioral Targeting', 'Custom Segments', 'Lookalike Audiences']
-    },
-    {
-      icon: <Zap size={32} />,
-      title: 'Marketing Automation',
-      description: 'Set up automated workflows that work while you sleep.',
-      features: ['Trigger-based Flows', 'Lead Nurturing', 'Customer Journey']
-    },
-    {
-      icon: <Shield size={32} />,
-      title: 'Analytics & Reporting',
-      description: 'Get deep insights into your campaign performance.',
-      features: ['Real-time Data', 'Custom Reports', 'ROI Tracking']
-    }
-  ];
-
+  {
+    icon: <Target size={32} />, // Placeholder icon, replace with appropriate one
+    title: 'Social Media Marketing',
+    description: 'Create engaging content and strategies for social platforms.',
+    features: ['Posts', 'Reels', 'Ad creatives', 'Smart strategy']
+  },
+  {
+    icon: <Zap size={32} />, // Placeholder icon, replace with appropriate one
+    title: 'Social Media Management',
+    description: 'Manage your social media presence effectively.',
+    features: ['Posting', 'Strategy', 'Captions']
+  },
+  {
+    icon: <Users size={32} />, // Placeholder icon, replace with appropriate one
+    title: 'Influencer Marketing',
+    description: 'Leverage influencer partnerships to expand your reach.',
+    features: ['Research', 'Outreach', 'Content', 'Posting', 'Collaborations']
+  },
+  {
+    icon: <Globe size={32} />, // Placeholder icon, replace with appropriate one
+    title: 'Website Development',
+    description: 'Build and maintain a strong online presence with a professional website.',
+    features: ['Design', 'Development', 'Hosting', 'SEO', 'Support']
+  },
+  {
+    icon: <ShoppingCart size={32} />, // Placeholder icon, replace with appropriate one
+    title: 'E-commerce Setup',
+    description: 'Set up your online store and start selling products.',
+    features: ['Shopify store setup', 'Product listing', 'Payments', 'Shipping & launch']
+  },
+  {
+    icon: <Feather size={32} />, // Placeholder icon, replace with appropriate one
+    title: 'Branding',
+    description: 'Develop a strong and recognizable brand identity.',
+    features: ['Logo', 'Identity Design', 'Business Cards']
+  }
+];
   return (
     <section id="services" className="py-5" style={{ backgroundColor: colors.light }}>
       <div className="container py-5">
