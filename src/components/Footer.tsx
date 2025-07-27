@@ -1,6 +1,6 @@
 import { colors } from './Color';
 import { Facebook, Instagram, Linkedin, Twitter } from 'lucide-react';
-import logo from "../assets/images/logo.png";
+import logo from "../assets/images/final_remove.png";
 // Assuming About, Services, Feedback, Contact are actual components
 // If these are not components but just labels, you'd use strings like 'About Us', 'Our Services', etc.
 // For the purpose of the footer links, we typically just display text.
@@ -44,10 +44,10 @@ const Footer = () => {
                 <img
                   src={logo}
                   alt="logo"
-                  height="90px"
-                  width="90px"
+                  height="60px"
+                  width="60px"
                   style={{
-                    marginTop: "-20px"
+                    marginTop: "-5px"
                   }}
                 />
               </div>

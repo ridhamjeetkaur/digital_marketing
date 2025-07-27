@@ -9,6 +9,8 @@ const colors = {
   accent: "#fbbf24", // Yellow-400
   success: "#10b981", // Emerald-500
   gray: "#6b7280", // Gray-500
+  blue:'#085aae'
+
 };
 
 const Hero: React.FC = () => {
@@ -33,7 +35,7 @@ const Hero: React.FC = () => {
 
             <h1 className="display-4 fw-bold mb-4" >
               Empowering Your{" "}
-              <span style={{ color: colors.primary ,fontSize:"6rem"}}>Digital Dreams</span>
+              <span style={{ color: colors.blue ,fontSize:"6rem"}}>Digital Dreams</span>
             </h1>
 
             <p className="lead text-muted mb-4" style={{ fontSize: '1.50rem' }} >

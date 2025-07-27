@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { colors } from "./Color";
 import { Menu, X } from "lucide-react";
-import logo from "../assets/images/logo.png"
+import logo from "../assets/images/final_remove.png"
 
 // Header Component
 const Header = () => {
@@ -37,12 +37,12 @@ const Header = () => {
           <div className="d-flex align-items-center">
               <span
               style={{ marginBottom:'20px',marginLeft:'5px'}}
-            > <img src={logo} alt="logo" height="90px" width="90px"/>
+            > <img src={logo} alt="logo" height="120px" width="120px"/>
              </span>
             <span 
               className="fw-bold fs-4"
               style={{ color: colors.dark, letterSpacing: '-0.5px'}}
-            > <h1>Zarexa</h1>
+            > <h1></h1>
               
             </span>
           </div>
