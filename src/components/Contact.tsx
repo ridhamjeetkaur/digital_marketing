@@ -147,7 +147,7 @@ const Contact: React.FC = () => {
                 {BsGeoAltFill({})}
               </div>
               <h4>Visit Here</h4>
-              <p>STEP-GNDEC, Gill's Garden Road
+              <p>STEP-GNDEC, Room No. 11, Gill's Garden Road
 </p>
               <p>Ludhiana – 141006, India</p>
             </div>

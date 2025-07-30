@@ -45,7 +45,7 @@ const Hero: React.FC = () => {
 
             <div className="d-flex gap-3 flex-wrap">
               <a href="#get-started" className="btn btn-primary px-4 py-2"style={{ fontSize: '1.50rem' }} >
-                Get Started
+                {/* Get Started */}
               </a>
               <a
                 href="#services"
