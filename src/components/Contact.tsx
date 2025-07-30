@@ -137,8 +137,8 @@ const Contact: React.FC = () => {
                 {BsEnvelopeFill({})}
               </div>
               <h4>Mail Here</h4>
-              <p>hello@luez.com</p>
-              <p>info@luez.com</p>
+              <p>contactzarexa@gmail.com</p>
+              <p></p>
             </div>
           </div>
           <div className="col-lg-4 col-md-6">
@@ -158,8 +158,7 @@ const Contact: React.FC = () => {
                 {BsPhoneFill({})}
               </div>
               <h4>Call Here</h4>
-              <p>+123 456 7890</p>
-              <p>+241 452 4526</p>
+              <p>+91 7973690946</p>
             </div>
           </div>
         </div>
